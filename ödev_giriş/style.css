@@ -1,0 +1,77 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;700&display=swap');
+ 
+
+*{
+    font-family: "poppins",sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: 0.4s;
+
+}
+body{
+    background-color: #C7B7A3;
+}
+nav ul li{
+    z-index: 1000;
+    top: 0;
+    list-style-type: none;
+    display: inline-block;
+    padding: 18px;
+}
+nav ul li a{
+    color:#C7B7A3;
+    text-decoration: none;
+    margin-left: 35px;
+    padding: 5px;
+  
+}
+nav ul li a:hover{
+    text-decoration: underline;
+    transition: 2s;
+}
+nav{
+    background-color: #561C24;
+}
+nav ul{
+    text-align: center;
+}
+
+.jpg{
+    z-index: -1000;
+}
+
+.div1{
+    display: inline-block;
+  
+    width: 400px;
+    height: 400px;
+    padding: 10px;
+    margin-top: 80px;
+    margin-left: 90px;
+    margin-right: 60px;
+    border-radius: 50%;
+    background-image: url(p1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-color: #ffffff;
+}
+
+.div2{
+    display: inline-block;
+ 
+ width: 550px;
+ height: 800px;
+ background-color: brown;
+ padding: 10px;
+ margin-left: 80px;
+ margin-top: 80px;
+ border-radius: 3%;
+ text-align: center;
+ 
+
+}
+
+.container {
+    display: flex; /* İçeriğin yatay olarak sıralanmasını sağlar */
+}
