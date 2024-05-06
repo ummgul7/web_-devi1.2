@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;700&display=swap');
+
+*{
+    font-family: "poppins",sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+.div{
+    
+    width: 1050px;
+    height: 1600px;
+    padding: 80px;
+    margin-top: 10px;
+    margin-left: 140px;
+    margin-right: 150px;
+    margin-bottom: 20px;
+    background-color:#F9F5E7;
+    text-align: center;
+}
+
+.main{
+    background-image: url(Leaf\ 4.jpeg);
+    background-position: center;
+}
+
+.home{
+    min-height:100vh;
+    background:url(kale.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+ 
+}
+.home .content h1{
+    font-size: 80px;
+    padding-top: 80px;
+    padding-left: 120px;
+    color:#561C24;
+
+}
+
+.sınır{
+    margin-left: 70px;
+} 
