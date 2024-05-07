@@ -1,0 +1,82 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;700&display=swap');
+
+*{
+    font-family: "poppins",sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+.slider_resim{
+   width: 100%;
+   margin:0  auto;
+    height: 600px;
+}
+
+.div{
+    
+    padding: 80px;
+    background-color:#F9F5E7;
+    text-align: center;
+    position: sticky;
+    top:0;
+
+
+}
+
+.div2{
+    width: 100%;
+    height: 60px;
+    background-color: #561C24;
+    color:#C7B7A3;
+    position: sticky;
+    top: 0;
+    
+
+}
+
+.slider-buttons {
+    position: absolute; /* İlgili butonları istediğiniz yere yerleştirmek için mutlak konumlandırma kullanabilirsiniz */
+    top: 50%; /* İlgili butonları dikeyde ortalamak için kullanabilirsiniz */
+    left: 0; /* İlgili butonları yatayda sola hizalamak için kullanabilirsiniz */
+    transform: translateY(-50%); /* İlgili butonları dikeyde tam ortalamak için kullanabilirsiniz */
+  }
+
+
+  .main{
+    background-image: url(Leaf\ 4.jpeg);
+    background-position: center;
+}
+
+.ulli{
+    list-style-type: none;
+    display: inline-block;
+}
+
+.kaynak{
+    width: 1050px;
+    height: 100px;
+    padding: 80px;
+    margin-top: 10px;
+    margin-left: 140px;
+    margin-right: 150px;
+    background-color:#F9F5E7;
+    text-align: center;
+}
+nav ul li a{
+    color:#C7B7A3;
+    text-decoration: none;
+    margin-left: 35px;
+    padding: 5px;
+  
+}
+nav ul li a:hover{
+    text-decoration: underline;
+    transition: 2s;
+    color:#C7B7A3;
+}
+nav{
+    background-color: #561C24;
+}
+nav ul{
+    text-align: center;
+}

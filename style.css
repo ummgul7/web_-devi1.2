@@ -1,0 +1,99 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;700&display=swap');
+ 
+
+*{
+    font-family: "poppins",sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: 0.4s;
+
+}
+body{
+    
+    background-image: url(fotograflar/Leaf\ 4.jpeg);
+}
+
+nav ul li a{
+    color:#C7B7A3;
+    text-decoration: none;
+    margin-left: 35px;
+    padding: 5px;
+  
+}
+nav ul li a:hover{
+    text-decoration: underline;
+    transition: 2s;
+    color:#C7B7A3;
+}
+nav{
+    background-color: #561C24;
+}
+nav ul{
+    text-align: center;
+}
+
+.main{
+    background-image: url(fotograflar/Leaf\ 4.jpeg);
+    background-position: center;
+}
+
+.home{
+    min-height: 525px;
+    background:url(fotograflar/pexels-iriser-1005711.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-top: -17px;
+}
+
+.header{
+    margin-bottom: -10px;
+}
+
+.home .content h1{
+    font-size: 80px;
+    padding-top: 180px;
+    padding-left: 120px;
+    color:#C7B7A3;
+
+}
+
+.ust{
+    background-image: url(fotograflar/pexels-iriser-1005711.jpg);
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.navbar-toggler-icon{
+ background-image:  url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='black' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar-toggler-icon path {
+    stroke: #000000; /* Örnek olarak siyah bir renk */
+}
+
+.boyut{
+    width: 350px;
+    height: 350px;
+    
+}
+.düzen{
+    margin-top: 2px;
+    background-color: #F9F5E7;
+    display: flex;
+    justify-content: center; /* Yatayda ortalama */
+    align-items: center
+}
+.hakkımda{
+    
+    text-align: center;
+    height: auto;
+    margin-top: 5px;
+    padding-top: 50px;
+    padding-right: 80px;
+    padding-left: 80px;
+    background-color: #F9F5E7;
+}
