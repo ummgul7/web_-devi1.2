@@ -1,0 +1,47 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;700&display=swap');
+
+*{
+    font-family: "poppins",sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-image:url(fotograflar/Leaf\ 4.jpeg);
+}
+nav{
+    background-color: #561C24;
+}
+nav ul{
+    text-align: center;
+}
+nav ul li a{
+    color:#C7B7A3;
+    text-decoration: none;
+    margin-left: 35px;
+    padding: 5px;
+}
+
+.div{
+    margin-top: 100px;
+    display: grid;
+    place-items: center;
+    max-width: 350px;
+    background-color: #f6f4f3;
+    border-radius: 5px;
+    padding-bottom: 50px;
+ 
+}
+.input-box{
+    margin-top: 40px;
+    width: 100%;
+    position: relative;
+}
+
+.container form .input-box input{
+    width: 300px;
+    height: 40px;
+  
+}
+
