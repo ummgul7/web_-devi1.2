@@ -4,33 +4,137 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iletisim</title>
+    <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="iletisim_css.css">
-    <link rel="stylesheet" href="bootstrap.min.css">
+    
+
 </head>
 <body>
-    <!-- ! header başlangıç-->
-    <header >
-        <div class="div_header">   
-            <h1 style="text-align: center;color:#C7B7A3;"> İLETİŞİM</h1>
-        </div>
-    </header>
-  <!-- ! header bitiş-->
-
-  <form>
-    <label for="fname">First name:</label><br>
-    <input type="text" id="fname" name="fname"><br>
-    <label for="lname">Last name:</label><br>
-    <input type="text" id="lname" name="lname">
-  </form>
+    <!-- ! navbar başlangıç-->
+    <div class="ust ">
+      <nav class="navbar navbar-expand-lg "   >
+        <div class="container ">
+          <a class="navbar-brand" href="login_html.html" >Giriş yap</a>
+          
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon">  </span>
+          </button>
+        
+          <div class="collapse navbar-collapse  justify-content-center" id="navbarSupportedContent" >
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item active">
+                <a class="nav-link" href="ödev.html">Hakkımda <span class="sr-only"></span></a>
+               
+              </li>
+             
+              <li class="nav-item d-flex align-items-center">
+                <a class="nav-link" href="Sehrim.html">Şehrim</a>
+               
+              </li>
+              <li class="nav-item d-flex align-items-center">
+                  <a class="nav-link" href="mirasimiz.html">Mirasımız</a>
+                
+                </li>
+                <li class="nav-item d-flex align-items-center">
+                  <a class="nav-link" href="#">İletişim</a>
+                 
+                </li>
+                <li class="nav-item d-flex align-items-center">
+                  <a class="nav-link" href="#">İlgi alanlarım</a>
+                  
+                </li>
+                <li class="nav-item d-flex align-items-center">
+                  <a class="nav-link" href="#">CV</a>
+  
+                </li>
+              
+            </ul>
+            
+          </div>
+        </nav>
+  </div>
     
-    <div>
-      <form action="">
-        <input type="text">
-        <input type="text">
-      </form>
+  <!-- ! navbar bitiş-->
 
-    </div>
+  <div class=" div container">
+    <h1 style="text-align: center;">İletişim Formu</h1>
+    <hr>
+    <form>
+      <div class="container">
+        <div class="row">
+          <div class=" name col">
+
+            <input type="text" placeholder="Ad" id="ad">
+            <input type="text" placeholder="Soyad" id="soyad">
+            <input type="email" placeholder="E-mail" id="email">
+          </div>
+          <div class=" text col">
+            <h6>Önerilerinizi benimle paylaşın....</h6>
+            <textarea id="mesaj" rows="9" cols="32" >
+              
+              </textarea>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class=" radio col">
+            <h4>Cinsiyet</h4>
+            <input type="radio" id="cinsiyet" value="erkek" >Erkek<br>
+             <input type="radio" id="cinsiyet" value="kadin">Kadın
+          </div>
+          <div class="col">
+            <h5>En sevdiğiniz mevsimi seçin :)</h5>
+            <select id="mevsim">
+              <option value="bos"></option>
+              <option value="ilkbahar">İlkbahar</option>
+              <option value="yaz">yaz</option>
+              <option value="sonbahar" selected>Sonbahar</option>
+              <option value="kıs">Kış</option>
+              </select>
+              
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="check col">
+          <h4>ilgi alanlarınız</h4>
+          <input type="checkbox" id="ilgi1"value="sanat"> Sanat <br>
+          <input type="checkbox" id="ilgi2"value="tarih"> Tarih <br>
+          <input type="checkbox" id="ilgi3"value="ekonomi"> Ekonomi <br>
+          <input type="checkbox" id="ilgi4"value="moda">Moda <br>
+          <input type="checkbox" id="ilgi5"value="spor">Spor <br>
+
+          </div>
+          <div class=" sub col">
+            <h6>Form gönder</h6>
+            <button onclick="js:goster()" style="width: 120px;
+            height: 40px;
+            margin-bottom:20px ;"> gönder </button>
+            <h6>js </h6>
+            <input type = "button" value= "gönder" onclilk=""> 
+            <h6>temizle</h6>
+            <input type="reset" value="TEMİZLE">
+          </div>
+        </div>
+      </div>
+    </form>
 
 
+</div>
+
+
+
+<script type="text/javascript">
+  function goster() {
+   
+  }
+</script>
+
+ 
+
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+<script src="bootstrap.min.js"></script>
 </body>
 </html>
