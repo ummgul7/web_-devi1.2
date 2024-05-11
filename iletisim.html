@@ -6,7 +6,10 @@
     <title>iletisim</title>
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="iletisim_css.css">
-    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="iletisim.js"></script>
+
 
 </head>
 <body>
@@ -53,42 +56,41 @@
           </div>
         </nav>
   </div>
+  
     
   <!-- ! navbar bitiş-->
 
   <div class=" div container">
     <h1 style="text-align: center;">İletişim Formu</h1>
     <hr>
-    <form>
+    <form id="form" >
       <div class="container">
         <div class="row">
           <div class=" name col">
 
-            <input type="text" placeholder="Ad" id="ad">
-            <input type="text" placeholder="Soyad" id="soyad">
-            <input type="email" placeholder="E-mail" id="email">
+            <input type="text" placeholder="Ad *" id="ad" >
+            <input type="text" placeholder="Soyad *" id="soyad">
+            <input type="email" placeholder="E-mail *" id="email">
           </div>
           <div class=" text col">
             <h6>Önerilerinizi benimle paylaşın....</h6>
-            <textarea id="mesaj" rows="9" cols="32" >
-              
-              </textarea>
+            <textarea id="mesaj" rows="9" cols="32" > </textarea>
           </div>
         </div>
 
         <div class="row">
           <div class=" radio col">
             <h4>Cinsiyet</h4>
-            <input type="radio" id="cinsiyet" value="erkek" >Erkek<br>
-             <input type="radio" id="cinsiyet" value="kadin">Kadın
+            <input type="radio" name="cinsiyet" value="erkek" id="cns1" >Erkek<br>
+             <input type="radio" name="cinsiyet" value="kadin" id="cns2">Kadın
           </div>
           <div class="col">
-            <h5>En sevdiğiniz mevsimi seçin :)</h5>
+            <h5>En sevdiğiniz mevsimi seçin </h5>
             <select id="mevsim">
-              <option value="bos"></option>
+              <option value="bos" selected></option>
               <option value="ilkbahar">İlkbahar</option>
               <option value="yaz">yaz</option>
-              <option value="sonbahar" selected>Sonbahar</option>
+              <option value="sonbahar" >Sonbahar</option>
               <option value="kıs">Kış</option>
               </select>
               
@@ -107,11 +109,13 @@
           </div>
           <div class=" sub col">
             <h6>Form gönder</h6>
-            <button onclick="js:goster()" style="width: 120px;
+            <button onclick="js:goster2()" style="width: 120px;
             height: 40px;
             margin-bottom:20px ;"> gönder </button>
-            <h6>js </h6>
-            <input type = "button" value= "gönder" onclilk=""> 
+            <h6>Form gönder ( )</h6>
+            <button onclick=""  style="width: 120px;
+            height: 40px;
+            margin-bottom:20px ;"> gonder</button>
             <h6>temizle</h6>
             <input type="reset" value="TEMİZLE">
           </div>
@@ -125,9 +129,85 @@
 
 
 <script type="text/javascript">
-  function goster() {
-   
+ 
+  function goster2(){
+    event.preventDefault();
+    var ad=document.getElementById("ad");
+    var soyad=document.getElementById("soyad");
+    var email=document.getElementById("email");
+    var cinsiyetErkek = document.getElementById("cns1");
+    var cinsiyetKadin = document.getElementById("cns2");
+
+        if(ad.value=="" || soyad.value=="" || email.value=="" )
+        {
+           alert("Zorunlu alanlar boş bırakılmaz. \n Lüten zorunlu alanları doldurun ");
+           event.preventDefault();
+        }
+        else
+        {
+          var cinsiyet;
+            if (cinsiyetErkek.checked) {
+            cinsiyet = "Erkek";
+            } else if (cinsiyetKadin.checked) {
+             cinsiyet = "Kadın";
+             } 
+
+        var ilgi1 = document.getElementById("ilgi1");
+        var ilgi2 = document.getElementById("ilgi2");
+        var ilgi3 = document.getElementById("ilgi3");
+        var ilgi4 = document.getElementById("ilgi4");
+        var ilgi5 = document.getElementById("ilgi5");
+
+        var secilenIlgiAlanlari = [];
+
+        if (ilgi1.checked) {
+        secilenIlgiAlanlari.push(ilgi1.value);
+        }
+        if (ilgi2.checked) {
+        secilenIlgiAlanlari.push(ilgi2.value);
+        }
+         if (ilgi3.checked) {
+        secilenIlgiAlanlari.push(ilgi3.value);
+        }
+        if (ilgi4.checked) {
+        secilenIlgiAlanlari.push(ilgi4.value);
+        }            
+         if (ilgi5.checked) {
+        secilenIlgiAlanlari.push(ilgi5.value);
+        }
+
+        var ilgiAlanlariString = "";  // seçilenilgi alanlaı bir dizi içinde onu alerte yazdırmak için dizideki elemanları stringe ekliyorum
+          secilenIlgiAlanlari.forEach(function(element) {
+            ilgiAlanlariString += element + ", ";
+           });
+           var secilenMevsim = document.getElementById("mevsim").value;
+
+           var girilenMetin = document.getElementById("mesaj").value;
+           var advalue=ad.value;
+           var soyadvalue=soyad.value;
+           var emailvalue=email.value; 
+
+           localStorage.setItem('advalue', advalue);
+           localStorage.setItem('soyadvalue', soyadvalue);
+           localStorage.setItem('emailvalue', emailvalue);
+           localStorage.setItem('cinsiyet',cinsiyet);
+           localStorage.setItem('ilgialanı',ilgiAlanlariString);
+           localStorage.setItem('secilenmevsim',secilenMevsim);
+           localStorage.setItem('girilenmetin',girilenMetin);
+            // ŞU AN TÜM VERİLER LOCALSTORAGE İLE GÖNDERİLİYOR  
+            window.location.href="sonuc.html";
+
   }
+         
+
+
+}
+
+
+
+  
+        
+
 </script>
 
  

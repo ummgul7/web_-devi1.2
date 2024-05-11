@@ -19,11 +19,7 @@ nav ul li a{
     padding: 5px;
   
 }
-nav ul li a:hover{
-    text-decoration: underline;
-    transition: 2s;
-    color:#C7B7A3;
-}
+
 nav{
     background-color: #561C24;
 }
@@ -41,7 +37,10 @@ nav ul{
 .col{
     background-color:#f6f4f3;
 }
-
+.navbar-nav .nav-item a.nav-link:hover {
+    color:#F9F5E7; /* Hover durumunda metin rengi kırmızı olacak */
+    transition: 1s;
+}
 .name input{
     width: 220px;
     height: 35px;
