@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myApp">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="iletisim_css.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
     <script src="iletisim.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
 
 
 </head>
-<body>
+<body ng-controller="FormController">
     <!-- ! navbar başlangıç-->
     <div class="ust ">
       <nav class="navbar navbar-expand-lg "   >
@@ -63,30 +63,31 @@
   <div class=" div container">
     <h1 style="text-align: center;">İletişim Formu</h1>
     <hr>
-    <form id="form" >
+
+     <form id="form" >
       <div class="container">
         <div class="row">
           <div class=" name col">
 
-            <input type="text" placeholder="Ad *" id="ad" >
-            <input type="text" placeholder="Soyad *" id="soyad">
-            <input type="email" placeholder="E-mail *" id="email">
+            <input type="text" placeholder="Ad *" id="ad"  ng-model="formData.ad">
+            <input type="text" placeholder="Soyad *" id="soyad" ng-model="formData.soyad">
+            <input type="email" placeholder="E-mail *" id="email" ng-model="formData.email">
           </div>
           <div class=" text col">
             <h6>Önerilerinizi benimle paylaşın....</h6>
-            <textarea id="mesaj" rows="9" cols="32" > </textarea>
+            <textarea id="mesaj" ng-model="formData.mesaj" rows="9" cols="32" > </textarea>
           </div>
         </div>
 
         <div class="row">
           <div class=" radio col">
             <h4>Cinsiyet</h4>
-            <input type="radio" name="cinsiyet" value="erkek" id="cns1" >Erkek<br>
-             <input type="radio" name="cinsiyet" value="kadin" id="cns2">Kadın
+            <input type="radio" name="cinsiyet" value="erkek" id="cns1" ng-model="formData.cinsiyet" >Erkek<br>
+             <input type="radio" name="cinsiyet" value="kadin" id="cns2 " ng-model="formData.cinsiyet" >Kadın
           </div>
           <div class="col">
             <h5>En sevdiğiniz mevsimi seçin </h5>
-            <select id="mevsim">
+            <select id="mevsim" ng-model="formData.mevsim" >
               <option value="bos" selected></option>
               <option value="ilkbahar">İlkbahar</option>
               <option value="yaz">yaz</option>
@@ -100,11 +101,11 @@
         <div class="row">
           <div class="check col">
           <h4>ilgi alanlarınız</h4>
-          <input type="checkbox" id="ilgi1"value="sanat"> Sanat <br>
-          <input type="checkbox" id="ilgi2"value="tarih"> Tarih <br>
-          <input type="checkbox" id="ilgi3"value="ekonomi"> Ekonomi <br>
-          <input type="checkbox" id="ilgi4"value="moda">Moda <br>
-          <input type="checkbox" id="ilgi5"value="spor">Spor <br>
+          <input type="checkbox" id="ilgi1"value="sanat" ng-model="formData.ilgi_sanat"  ng-true-value="'sanat'" ng-false-value="''"> Sanat <br>
+          <input type="checkbox" id="ilgi2"value="tarih" ng-model="formData.ilgi_tarih" ng-true-value="'tarih'" ng-false-value="''"> Tarih <br>
+          <input type="checkbox" id="ilgi3"value="ekonomi" ng-model="formData.ilgi_ekonomi" ng-true-value="'ekonomi'" ng-false-value="''" > Ekonomi <br>
+          <input type="checkbox" id="ilgi4"value="moda" ng-model="formData.ilgi_moda" ng-true-value="'moda'" ng-false-value="''" >Moda <br>
+          <input type="checkbox" id="ilgi5"value="spor" ng-model="formData.ilgi_spor" ng-true-value="'spor'" ng-false-value="''" >Spor <br>
 
           </div>
           <div class=" sub col">
@@ -113,7 +114,7 @@
             height: 40px;
             margin-bottom:20px ;"> gönder </button>
             <h6>Form gönder ( )</h6>
-            <button onclick=""  style="width: 120px;
+            <button ng-click="submitForm()"  style="width: 120px;
             height: 40px;
             margin-bottom:20px ;"> gonder</button>
             <h6>temizle</h6>
@@ -122,9 +123,8 @@
         </div>
       </div>
     </form>
-
-
-</div>
+    
+    </div>
 
 
 
@@ -202,19 +202,64 @@
 
 
 }
-
-
-
-  
-        
-
+     
 </script>
 
+
+<script type="text/javascript">
+
+  angular.module('myApp', [])
+.controller('FormController', ['$scope', '$window', function($scope, $window) {
+    $scope.formData = {};
+
+    $scope.submitForm = function() {
+        // Form verilerini al
+        var ad = $scope.formData.ad;
+        var soyad = $scope.formData.soyad;
+        var email = $scope.formData.email;
+        var mesaj = $scope.formData.mesaj;
+        var cinsiyet = $scope.formData.cinsiyet;
+        var mevsim = $scope.formData.mevsim;
+
+        var ilgi_alanlari = [];
+        if ($scope.formData.ilgi_sanat) {
+            ilgi_alanlari.push('sanat');
+        }
+        if ($scope.formData.ilgi_tarih) {
+            ilgi_alanlari.push('tarih');
+        }
+        if ($scope.formData.ilgi_ekonomi) {
+            ilgi_alanlari.push('ekonomi');
+        }
+        if ($scope.formData.ilgi_moda) {
+            ilgi_alanlari.push('moda');
+        }
+        if ($scope.formData.ilgi_spor) {
+            ilgi_alanlari.push('spor');
+        }
+
+        $window.location.href = 'sonuc2.html?ad=' + ad + '&soyad=' + soyad + '&email=' + email + '&mesaj=' + mesaj + '&cinsiyet=' + cinsiyet + '&mevsim=' + mevsim + '&ilgi_alanlari=' + ilgi_alanlari.join(',');
+      
+    };
+}]);
+
+</script>
  
-
-
+  
+<script src="app.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 <script src="bootstrap.min.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+

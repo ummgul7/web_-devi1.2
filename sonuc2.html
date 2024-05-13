@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="bootstrap.min.js">
+    <link rel="stylesheet" href="sonuc_css.css">
+    <title>Form değer</title>
+</head>
+<body ng-app="myApp" ng-controller="KarşılayıcıController">
+    <div class="ust ">
+        <nav class="navbar navbar-expand-lg "   >
+          <div class="container ">
+            <a class="navbar-brand" href="login_html.html" >Giriş yap</a>
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon">  </span>
+            </button>
+          
+            <div class="collapse navbar-collapse  justify-content-center" id="navbarSupportedContent" >
+              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item active">
+                  <a class="nav-link" href="ödev.html">Hakkımda <span class="sr-only"></span></a>
+                 
+                </li>
+               
+                <li class="nav-item d-flex align-items-center">
+                  <a class="nav-link" href="Sehrim.html">Şehrim</a>
+                 
+                </li>
+                <li class="nav-item d-flex align-items-center">
+                    <a class="nav-link" href="mirasimiz.html">Mirasımız</a>
+                  
+                  </li>
+                  <li class="nav-item d-flex align-items-center">
+                    <a class="nav-link" href="iletisim.html">İletişim</a>
+                   
+                  </li>
+                  <li class="nav-item d-flex align-items-center">
+                    <a class="nav-link" href="ilgilalanım.html">İlgi alanlarım</a>
+                    
+                  </li>
+                  <li class="nav-item d-flex align-items-center">
+                    <a class="nav-link" href="CV.html">CV</a>
+    
+                  </li>
+                 
+              </ul>
+              
+            </div>
+          </nav>
+    
+        </div>
+        <div class=" div conteiner" >
+        <h1>Formdan Gelen Veriler</h1>
+        <p>Ad: {{ ad }}</p>
+        <p>Soyad: {{ soyad }}</p>
+        <p>E-mail: {{ email }}</p>
+        <p>Cinsiyet: {{ cinsiyet }}</p>
+        <p>Mevsim: {{ mevsim }}</p>
+        <p>İlgi Alanları: {{ ilgi_alanlari.join(', ') }}</p>
+        <p>Mesaj: {{ mesaj }}</p> 
+       
+    
+ </div>
+
+
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+        <script>
+            angular.module('myApp', [])
+            .controller('KarşılayıcıController', ['$scope', '$window', function($scope, $window) {
+                // URL'den parametreleri al
+                var params = new URLSearchParams($window.location.search);
+                $scope.ad = params.get('ad');
+                $scope.soyad = params.get('soyad');
+                $scope.email = params.get('email');
+                $scope.mesaj = params.get('mesaj');
+                $scope.cinsiyet = params.get('cinsiyet');
+                $scope.mevsim = params.get('mevsim');
+                $scope.ilgi_alanlari = params.get('ilgi_alanlari').split(',');
+            }]);
+        </script>
+  
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+</body>
+</html>

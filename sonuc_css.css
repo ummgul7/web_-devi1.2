@@ -36,7 +36,8 @@ nav ul{
 .div{
     display: grid; 
     place-items: center;
-    max-width: 400px;
+    max-width: 600px;
+    width: auto;
     background-color: #f6f4f3;
     border-radius: 5px;
     padding-bottom: 50px;
