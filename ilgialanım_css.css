@@ -1,0 +1,53 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;700&display=swap');
+ 
+
+*{
+    font-family: "poppins",sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: 0.4s;
+
+}
+body{
+    
+    background-image: url(fotograflar/Leaf\ 4.jpeg);
+}
+
+nav ul li a{
+    color:#C7B7A3;
+    text-decoration: none;
+    margin-left: 35px;
+    padding: 5px;
+}
+
+
+.navbar-nav .nav-item a.nav-link:hover {
+    color:#F9F5E7; /* Hover durumunda metin rengi kırmızı olacak */
+    transition: s;
+}
+nav{
+    background-color: #561C24;
+}
+nav ul{
+    text-align: center;
+}
+
+#haberListesi {
+    list-style-type: none;
+    padding: 0;
+}
+
+#haberListesi li {
+    margin-bottom: 10px;
+}
+
+.div{
+    max-width: 1000px;
+    height:auto;
+    background-color:#F9F5E7;
+}
+
+.movediv h1{
+    display: block;
+}

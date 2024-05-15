@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="bootstrap.min.js">
+    <link rel="stylesheet" href="ilgialanım_css.css">
+    <title>İlgi Alanlarım</title>
+    <style>
+        #movie-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+        }
+        #movie-info {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px; /* Poster ve açıklama arasındaki boşluk */
+        }
+        #movie-info img {
+            max-width: 300px; /* Poster genişliği */
+            height: auto; /* Oranları korumak için */
+        }
+        #movie-details {
+            max-width: 600px; /* Açıklama metninin kaplayacağı maksimum genişlik */
+        }
+        @media (max-width: 768px) {
+            #movie-info {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+  <div class="ust ">
+    <nav class="navbar navbar-expand-lg "   >
+      <div class="container ">
+        <a class="navbar-brand" href="login_html.html" >Giriş yap</a>
+        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon">  </span>
+        </button>
+      
+        <div class="collapse navbar-collapse  justify-content-center" id="navbarSupportedContent" >
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="ödev.html">Hakkımda <span class="sr-only"></span></a>
+             
+            </li>
+           
+            <li class="nav-item d-flex align-items-center">
+              <a class="nav-link" href="Sehrim.html">Şehrim</a>
+             
+            </li>
+            <li class="nav-item d-flex align-items-center">
+                <a class="nav-link" href="mirasimiz.html">Mirasımız</a>
+              
+              </li>
+              <li class="nav-item d-flex align-items-center">
+                <a class="nav-link" href="#">İletişim</a>
+               
+              </li>
+              <li class="nav-item d-flex align-items-center">
+                <a class="nav-link" href="#">İlgi alanlarım</a>
+                
+              </li>
+              <li class="nav-item d-flex align-items-center">
+                <a class="nav-link" href="#">CV</a>
+
+              </li>
+            
+          </ul>
+          
+        </div>
+      </nav>
+</div>
+  
+<div class=" div container " >
+  <h2 style="margin-left: 20px;">Film Ara</h2>
+    <form id="movie-form">
+        <input type="text" id="movie-name" placeholder="Film adı girin" required  style="width: 250px;height: 40px;">
+        <button type="submit" style="width: 100px;
+        height: 35px;
+        margin-bottom:20px ;">Ara</button>
+    </form>
+    <div id="movie-info" class="movediv container "  ></div>
+</div>
+
+
+
+    <script>
+        const apiKey = 'e9bc1f2071dc1a353bb9cfa25a4e3046';
+
+        document.getElementById('movie-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const movieName = document.getElementById('movie-name').value;
+            searchMovie(movieName);
+        });
+
+        function searchMovie(movieName) {
+            const searchUrl = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${encodeURIComponent(movieName)}&language=tr-TR`;
+
+            fetch(searchUrl)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.results.length > 0) {
+                        const movie = data.results[0];
+                        const posterUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+                        document.getElementById('movie-info').innerHTML = `
+                            <h1>${movie.title}</h1>
+                            <img src="${posterUrl}" alt="${movie.title} poster">
+                            <p>${movie.overview}</p>
+                            <p><strong>Çıkış Tarihi:</strong> ${movie.release_date}</p>
+                        `;
+                    } else {
+                        document.getElementById('movie-info').innerHTML = '<p>Film bulunamadı.</p>';
+                    }
+                })
+                .catch(error => console.error('Error fetching movie data:', error));
+        }
+    </script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+
+</body>
+</html>
