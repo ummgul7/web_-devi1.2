@@ -5,10 +5,13 @@
     margin: 0px;
     padding: 0px;
 }
+.navbar-nav .nav-item a.nav-link:hover {
+    color:#F9F5E7; /* Hover durumunda metin rengi kırmızı olacak */
+    transition: 1s;
+}
 
 .div{ 
-    padding-top: 5px;
-    
+    padding-top: 40px;
     background-color:#F9F5E7;
     text-align: center;
 }
@@ -28,7 +31,7 @@
 .home .content h1{
     font-size: 80px;
     padding-top: 80px;
-    padding-left: 120px;
+    padding-left: 100px;
     color:#561C24;
 
 }
@@ -44,14 +47,28 @@ nav ul li a{
     padding: 5px;
   
 }
-nav ul li a:hover{
-    text-decoration: underline;
-    transition: 2s;
-    color:#C7B7A3;
-}
+
 nav{
     background-color: #561C24;
 }
 nav ul{
     text-align: center;
 }
+
+.miras{
+    padding: 25px;
+}
+
+@media (max-width: 767px) {
+    .miras .row {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .miras .col-8,
+    .miras .col-4 {
+      width: 100%;
+    }
+  }
+  
+  

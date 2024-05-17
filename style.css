@@ -1,7 +1,5 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;700&display=swap');
  
-
 *{
     font-family: "poppins",sans-serif;
     margin: 0;
@@ -19,12 +17,16 @@ nav ul li a{
     text-decoration: none;
     margin-left: 35px;
     padding: 5px;
-  
 }
-nav ul li a:hover{
+/* nav ul li a:hover{
     text-decoration: underline;
-    transition: 2s;
+    transition: 3s;
     color:#C7B7A3;
+} */
+
+.navbar-nav .nav-item a.nav-link:hover {
+    color:#F9F5E7; /* Hover durumunda metin rengi kırmızı olacak */
+    transition: s;
 }
 nav{
     background-color: #561C24;
@@ -46,7 +48,7 @@ nav ul{
     margin-top: -17px;
 }
 
-.header{
+/* .header{
     margin-bottom: -10px;
 }
 
@@ -56,8 +58,7 @@ nav ul{
     padding-left: 120px;
     color:#C7B7A3;
 
-}
-
+} 
 .ust{
     background-image: url(fotograflar/pexels-iriser-1005711.jpg);
     height: 100vh;
@@ -65,7 +66,7 @@ nav ul{
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-}
+} */
 
 .navbar-toggler-icon{
  background-image:  url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='black' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
@@ -75,25 +76,36 @@ nav ul{
     stroke: #000000; /* Örnek olarak siyah bir renk */
 }
 
-.boyut{
-    width: 350px;
-    height: 350px;
-    
-}
-.düzen{
-    margin-top: 2px;
-    background-color: #F9F5E7;
-    display: flex;
-    justify-content: center; /* Yatayda ortalama */
-    align-items: center
-}
 .hakkımda{
-    
-    text-align: center;
+    max-width: 1200px;
     height: auto;
-    margin-top: 5px;
-    padding-top: 50px;
-    padding-right: 80px;
-    padding-left: 80px;
+    margin-top: 20px;
+    padding-top:60px;
+    padding-bottom: 10px;
     background-color: #F9F5E7;
 }
+
+.p {
+    margin-left: 40px;
+}
+
+.hakkımda {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .hakkımda .col-lg-4, .hakkımda .col-lg-8 {
+    margin-bottom: 20px;
+  }
+  
+  .social-links a {
+    margin: 10px 0;
+  }
+  
+  @media (max-width: 992px) {
+    .hakkımda .col-lg-4, .hakkımda .col-lg-8 {
+      width: 100%;
+    }
+  }
+  

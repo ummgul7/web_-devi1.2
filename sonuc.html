@@ -53,16 +53,15 @@
     </div>
     <div class=" div conteiner" >
         <h2>Formdan gelen veriler</h2>
-        <hr>
-        <ul >
-            <li><p id="ad"></p> </li>
-            <li><p id="soyad"></p></li>
-            <li><p id="email"></p></li>
-            <li><p id="cinsiyet"></p></li>
-            <li><p id="ilgialani"></p></li>
-            <li><p id="favmevsim"></p></li>
-            <li><p id="mesaj"></p></li>
-        </ul>
+        <hr> 
+            <p id="ad"> Ad:</p> 
+            <p id="soyad">Soyad:</p>
+            <p id="email"></p>
+            <p id="cinsiyet">Cinsiyet:</p>
+            <p id="ilgialani">İlgialanları:</p>
+            <p id="favmevsim">Mevsim:</p>
+           <p id="mesaj">Mesaj:</p>
+        
     </div>
 
 
@@ -76,13 +75,14 @@
       var mesaj=localStorage.getItem('girilenmetin');
 
       // elementlerine ıd uygun şekilde değişkenlere atadım 
-      document.getElementById('ad').textContent=firstname;
-      document.getElementById('soyad').textContent=lastname;
-      document.getElementById('email').textContent=email;
-      document.getElementById('cinsiyet').textContent=cinsiyet;
-      document.getElementById('ilgialani').textContent=ilgialani;
-      document.getElementById('favmevsim').textContent=favmevsim;
-      document.getElementById('mesaj').textContent=mesaj;
+      document.getElementById('ad').textContent = "Ad: " + firstname;
+document.getElementById('soyad').textContent = "Soyad: " + lastname;
+document.getElementById('email').textContent = "Email: " + email;
+document.getElementById('cinsiyet').textContent = "Cinsiyet: " + cinsiyet;
+document.getElementById('ilgialani').textContent = "İlgi Alanları: " + ilgialani;
+document.getElementById('favmevsim').textContent = "Mevsim: " + favmevsim;
+document.getElementById('mesaj').textContent = "Mesaj: " + mesaj;
+
    
     </script>
 

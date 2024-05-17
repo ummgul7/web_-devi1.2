@@ -9,7 +9,12 @@
 .slider_resim{
    width: 100%;
    margin:0  auto;
-    height: 600px;
+    height: 100%;
+}
+
+.navbar-nav .nav-item a.nav-link:hover {
+    color:#F9F5E7; /* Hover durumunda metin rengi kırmızı olacak */
+    transition: 1s;
 }
 
 .div{
@@ -42,8 +47,8 @@
   }
 
 
-  .main{
-    background-image: url(Leaf\ 4.jpeg);
+.main{
+    background-image: url(fotograflar/Leaf\ 4.jpeg);
     background-position: center;
 }
 
@@ -69,14 +74,50 @@ nav ul li a{
     padding: 5px;
   
 }
-nav ul li a:hover{
-    text-decoration: underline;
-    transition: 2s;
-    color:#C7B7A3;
-}
+
 nav{
     background-color: #561C24;
 }
 nav ul{
     text-align: center;
 }
+.carousel {
+    max-width: 1100px; /* Slider container'ının maksimum genişliği 800 piksel olacak şekilde ayarlanır */
+    max-height: 650px;
+    margin: 0 auto; /* Slider container'ı merkeze hizalanır */
+    
+}
+.col img{
+    max-width: 100%;
+}
+.gallery{
+   background-color: #F9F5E7;
+   padding: 80px 0;
+}
+.gallery img{
+    background-color: #561C24;
+    padding: 15px;
+    width: 100%;
+}
+
+.carousel-item {
+    height: 500px; /* Slayderin yüksekliği */
+    width: 800px; /* Slayderin genişliği */
+}
+
+.carousel-item img {
+    object-fit: cover; /* Resimlerin tamamen doldurması */
+    width: 100%; /* Resimlerin genişliği */
+    height: 100%; /* Resimlerin yüksekliği */
+}
+.sehir{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+@media (max-width: 992px) {
+    .row .sehir {
+      width: 100%;
+    }
+  }

@@ -32,22 +32,13 @@ nav{
 nav ul{
     text-align: center;
 }
-
-#haberListesi {
-    list-style-type: none;
-    padding: 0;
-}
-
-#haberListesi li {
-    margin-bottom: 10px;
-}
-
 .div{
+    margin-top: 30px;
     max-width: 1000px;
-    height:auto;
-    background-color:#F9F5E7;
+    max-height:auto;
+    padding: 50px;
+    background-color: #F9F5E7;
 }
-
-.movediv h1{
-    display: block;
+.p {
+    margin-left: 15px;
 }

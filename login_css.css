@@ -43,5 +43,9 @@ nav ul li a{
     width: 300px;
     height: 40px;
   
-}
 
+}
+.navbar-nav .nav-item a.nav-link:hover {
+    color:#F9F5E7; /* Hover durumunda metin rengi kırmızı olacak */
+    transition: 1s;
+}

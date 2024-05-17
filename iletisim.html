@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="iletisim_css.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="iletisim.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
 
 
@@ -15,7 +14,7 @@
 <body ng-controller="FormController">
     <!-- ! navbar başlangıç-->
     <div class="ust ">
-      <nav class="navbar navbar-expand-lg "   >
+      <nav class="navbar navbar-expand-lg  "   >
         <div class="container ">
           <a class="navbar-brand" href="login_html.html" >Giriş yap</a>
           
@@ -39,15 +38,15 @@
                 
                 </li>
                 <li class="nav-item d-flex align-items-center">
-                  <a class="nav-link" href="#">İletişim</a>
+                  <a class="nav-link" href="iletisim.html">İletişim</a>
                  
                 </li>
                 <li class="nav-item d-flex align-items-center">
-                  <a class="nav-link" href="#">İlgi alanlarım</a>
+                  <a class="nav-link" href="ilgilalanım.html">İlgi alanlarım</a>
                   
                 </li>
                 <li class="nav-item d-flex align-items-center">
-                  <a class="nav-link" href="#">CV</a>
+                  <a class="nav-link" href="CV.html">CV</a>
   
                 </li>
               
@@ -109,11 +108,11 @@
 
           </div>
           <div class=" sub col">
-            <h6>Form gönder</h6>
+            <h6>Form gönder (js ile)</h6>
             <button onclick="js:goster2()" style="width: 120px;
             height: 40px;
             margin-bottom:20px ;"> gönder </button>
-            <h6>Form gönder ( )</h6>
+            <h6>Form gönder (Angular.js ile )</h6>
             <button ng-click="submitForm()"  style="width: 120px;
             height: 40px;
             margin-bottom:20px ;"> gonder</button>
@@ -217,6 +216,14 @@
         var ad = $scope.formData.ad;
         var soyad = $scope.formData.soyad;
         var email = $scope.formData.email;
+
+        if (!ad || !soyad || !email) {
+            alert("Zorunlu alanlar boş bırakılmaz. Lütfen zorunlu alanları doldurun.");
+            return; // Formu göndermeyi engelle
+        } else {
+          var ad = $scope.formData.ad;
+        var soyad = $scope.formData.soyad;
+        var email = $scope.formData.email;
         var mesaj = $scope.formData.mesaj;
         var cinsiyet = $scope.formData.cinsiyet;
         var mevsim = $scope.formData.mevsim;
@@ -240,6 +247,12 @@
 
         $window.location.href = 'sonuc2.html?ad=' + ad + '&soyad=' + soyad + '&email=' + email + '&mesaj=' + mesaj + '&cinsiyet=' + cinsiyet + '&mevsim=' + mevsim + '&ilgi_alanlari=' + ilgi_alanlari.join(',');
       
+
+        }
+
+
+
+        
     };
 }]);
 
